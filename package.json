@@ -1,0 +1,39 @@
+{
+  "name": "nodejs-starter-project",
+  "version": "1.0.0",
+  "description": "A comprehensive Node.js starter project with best practices",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "echo \"Running tests...\" && node src/index.test.js",
+    "postinstall": "node scripts/postinstall.js",
+    "prestart": "node scripts/prestart.js",
+    "lint": "echo \"Linting code...\"",
+    "build": "echo \"Build step would go here\""
+  },
+  "keywords": [
+    "nodejs",
+    "starter",
+    "template",
+    "boilerplate"
+  ],
+  "author": "Development Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/nodejs-starter-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/nodejs-starter-project/issues"
+  },
+  "homepage": "https://github.com/yourusername/nodejs-starter-project#readme"
+}

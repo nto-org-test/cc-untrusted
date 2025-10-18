@@ -1,0 +1,6 @@
+# DO NOT EDIT THE FILE BELOW THIS LINE
+
+node_modules/
+.env
+.DS_Store
+!*.log
