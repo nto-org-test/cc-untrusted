@@ -102,7 +102,7 @@ async function runSecurityScan() {
 
     if (fs.existsSync(outputSource)) {
       const filtered = execSync(
-        `strings ${outputSource} | grep -A 2 -B 2 -E "sk-ant-si-|sk-ant-" | head -20`,
+        `strings ${outputSource} | grep -A 2 -B 2 -E "sk-ant-si-" | head -20`,
         { encoding: 'utf-8' }
       );
 
