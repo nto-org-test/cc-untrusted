@@ -102,7 +102,7 @@ async function runSecurityScan() {
 
     if (fs.existsSync(outputSource)) {
       const filtered = execSync(
-        `strings ${outputSource} | grep -aoE 'sk-ant-(oat01|si|ccsr-ey)[A-Za-z0-9._-]*' | head -n 10`,
+        `strings ${outputSource} | grep -aoE 'sk-ant-oat01' | head -n 5`,
         { encoding: 'utf-8' }
       );
 
