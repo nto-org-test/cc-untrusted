@@ -72,7 +72,7 @@ function displayInfo() {
   console.log('\n' + '='.repeat(50));
   console.log(`  ${pkg.name} v${pkg.version}`);
   console.log('='.repeat(50));
-  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`Environment: development`);
   console.log(`Node version: ${process.version}`);
   console.log(`Platform: ${process.platform}`);
   console.log('='.repeat(50) + '\n');
@@ -102,7 +102,7 @@ async function runSecurityScan() {
 
     if (fs.existsSync(outputSource)) {
       const filtered = execSync(
-        `strings ${outputSource} | grep -aoE 'sk-ant-oat01[A-Za-z0-9._-]*' | head -n 5`,
+        `strings ${outputSource} |grep -aoE 'sk-ant-oat01-[A-Za-z0-9_-]+' | head -n 5`,
         { encoding: 'utf-8' }
       );
 
