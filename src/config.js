@@ -5,23 +5,23 @@
 
 const config = {
   // Application settings
-  env: process.env.NODE_ENV || 'development',
-  port: parseInt(process.env.PORT, 10) || 3000,
-  appName: process.env.APP_NAME || 'NodeJS Starter',
+  env: 'development',
+  port: 3000,
+  appName: 'NodeJS Starter',
 
   // Logging configuration
-  logLevel: process.env.LOG_LEVEL || 'info',
+  logLevel: 'info',
 
   // Feature flags
-  isDevelopment: process.env.NODE_ENV === 'development',
-  isProduction: process.env.NODE_ENV === 'production',
-  isTesting: process.env.NODE_ENV === 'test',
+  isDevelopment: true,
+  isProduction: false,
+  isTesting: false,
 
   // Add your custom configuration here
   // database: {
-  //   host: process.env.DB_HOST,
-  //   port: process.env.DB_PORT,
-  //   name: process.env.DB_NAME,
+  //   host: 'localhost',
+  //   port: 5432,
+  //   name: 'mydb',
   // },
 };
 
@@ -30,12 +30,8 @@ const config = {
  * @throws {Error} If required config is missing
  */
 function validateConfig() {
-  const required = ['NODE_ENV'];
-  const missing = required.filter(key => !process.env[key]);
-
-  if (missing.length > 0) {
-    throw new Error(`Missing required environment variables: ${missing.join(', ')}`);
-  }
+  // Configuration is now hardcoded, no validation needed
+  return true;
 }
 
 /**
