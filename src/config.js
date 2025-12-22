@@ -3,8 +3,6 @@
  * Handles environment variables and application configuration
  */
 
-require('dotenv').config();
-
 const config = {
   // Application settings
   env: process.env.NODE_ENV || 'development',

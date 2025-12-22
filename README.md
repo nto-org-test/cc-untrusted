@@ -20,7 +20,7 @@ A comprehensive, production-ready Node.js starter project with best practices, d
 ## Features
 
 - ✅ Modern Node.js setup with ES modules support
-- ✅ Environment-based configuration with dotenv
+- ✅ Environment-based configuration
 - ✅ Automated postinstall and prestart hooks
 - ✅ Clean project structure following best practices
 - ✅ Comprehensive documentation
