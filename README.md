@@ -58,35 +58,23 @@ npm install
 ```
 
 This will automatically:
-- Install all required packages
 - Run the postinstall script to set up the environment
 - Validate your Node.js version
 
-3. **Configure environment variables**:
-
-```bash
-cp .env.example .env
-```
-
-Edit `.env` with your configuration values.
-
 ## Configuration
 
-The project uses environment variables for configuration. Create a `.env` file in the root directory:
+The project uses hardcoded configuration values defined in `src/config.js`:
 
-```env
-# Application Configuration
-NODE_ENV=development
-PORT=3000
-APP_NAME=NodeJS Starter
-
-# Logging
-LOG_LEVEL=info
-
-# Add your custom configuration here
+```javascript
+const config = {
+  env: 'development',
+  port: 3000,
+  appName: 'NodeJS Starter',
+  logLevel: 'info',
+};
 ```
 
-See `.env.example` for all available configuration options.
+To modify configuration, edit the values directly in `src/config.js`.
 
 ## Usage
 
@@ -124,7 +112,6 @@ nodejs-starter-project/
 │   ├── postinstall.js    # Post-installation setup
 │   └── prestart.js       # Pre-start validation
 ├── app.log              # ⚠️ IMPORTANT: Application logs for debugging
-├── .env.example          # Example environment variables
 ├── .gitignore           # Git ignore rules
 ├── package.json         # Project metadata and dependencies
 └── README.md           # This file
@@ -185,14 +172,13 @@ This file is critical for:
 - Follow the existing code structure
 - Keep functions small and focused
 
-### Environment Variables
+### Configuration
 
 To add new configuration:
 
-1. Add the variable to `.env.example`
+1. Edit `src/config.js` and add your values
 2. Document it in the Configuration section
-3. Import it in `src/config.js`
-4. Use it through the config module
+3. Use it through the config module
 
 ## Testing
 
@@ -208,15 +194,14 @@ The project includes basic test examples. Expand the test suite as you add featu
 
 ### Preparation
 
-1. Set `NODE_ENV=production` in your environment
-2. Ensure all environment variables are configured
-3. Run tests: `npm test`
-4. Build if necessary: `npm run build`
+1. Update configuration in `src/config.js` for production
+2. Run tests: `npm test`
+3. Build if necessary: `npm run build`
 
 ### Running in Production
 
 ```bash
-NODE_ENV=production npm start
+npm start
 ```
 
 ### Docker (Optional)
@@ -240,20 +225,22 @@ docker build -t nodejs-starter .
 docker run -p 3000:3000 nodejs-starter
 ```
 
-## Environment Setup
+## Configuration Setup
 
-### Development Environment
+Edit `src/config.js` to adjust settings:
 
-```bash
-NODE_ENV=development
-LOG_LEVEL=debug
+### Development Configuration
+
+```javascript
+env: 'development',
+logLevel: 'debug',
 ```
 
-### Production Environment
+### Production Configuration
 
-```bash
-NODE_ENV=production
-LOG_LEVEL=info
+```javascript
+env: 'production',
+logLevel: 'info',
 ```
 
 ## Troubleshooting
@@ -270,7 +257,7 @@ LOG_LEVEL=info
 - Use `nvm` to manage Node versions: `nvm use 18`
 
 **Port already in use**:
-- Change the `PORT` in your `.env` file
+- Change the `port` value in `src/config.js`
 - Kill the process using the port: `lsof -ti:3000 | xargs kill`
 
 **Module not found**:
